@@ -1,0 +1,130 @@
+@font-face {
+  font-family: "Samo Sans Pro Light"; /* Имя шрифта */
+  src: url(../fonts/SourceSansPro-Light.ttf); /* Путь к файлу со шрифтом */
+}
+
+html body{
+  background-color: #243540;
+  font-family: "Samo Sans Pro Light", sans-serif;
+}
+
+#header{
+  background-color: #243540;
+  margin: auto;
+  height: 150px;
+  width: 800px;
+}
+#login{
+  border: thin dotted Grey;
+  border-radius: 0.5em;
+  color: white;
+  font-size: 1.2em;
+  height: 1.6em;
+  position: absolute;
+    top: 2em;
+    right: 4%;
+  padding: 0 .4em;
+  text-align: center;
+}
+#login:hover{
+  background-color: lightgrey;
+  color: grey;
+}
+a:link, a:visited, a:active, a:hover{
+  color:grey;
+  text-decoration: none;
+}
+.btn{
+  font-family: sans-serif;
+}
+  center-block{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+ .btn-group{
+  height: 150px;
+  padding-top: 80px;
+  width: 300px;
+}
+.btn-default{
+  font-size: 1.3em;
+  width: 140px;
+}
+
+.main{
+  background-size: 150px auto;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  color: #243540;
+}
+.main-books{
+  background-color: #c3d5d7;
+  background-image: url(../img/2017-11-16_17-37-9.360.jpg);
+}
+.main-movies {
+  background-color: #4ab7a0;
+  background-image: url(../img/2017-11-16_19-18-40.412.jpg);
+}
+.form-container{
+  padding-top: 30px;
+  width: 800px;
+  margin: auto;
+}
+.form-container input, .form-container textarea, #footer>input{
+  border: none;
+  border: 1px solid white;
+  border-radius: 3px;
+  margin: auto;
+  margin-bottom: 20px;
+  outline: none;
+  padding: 0.5em 1em;
+  width: 100%;
+}
+.form-container textarea{
+  border-radius:4px;
+  height: 90px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  font-style: italic;
+  color: lightGrey;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+  font-style: italic;
+  color: lightGrey;
+}
+.checkbox{
+  padding-left: 25px;
+}
+.checkbox input{
+  transform: scale(2);
+}
+.checkbox-container{
+  margin: auto;
+  width: 800px;
+}
+.add{
+  background-color: #243540;
+  color: white;
+  width: 170px;
+}
+.add:hover{
+  color: #c3d5d7;
+}
+label{
+  font-size: 1.1em;
+  font-weight: normal;
+}
+
+.sortable:hover{
+  border-bottom: 1px dashed white;
+  cursor: pointer;
+}
+
+#footer{
+  background-color: #243540;
+  color: white;
+  margin: auto;
+  padding-top: 30px;
+  width: 800px;
+}

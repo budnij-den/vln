@@ -1,0 +1,33 @@
+<div id="" class="main main-<%= @entity_name%>">
+  <form action="/edit_success/<%= @line_for_edit.id %>" method="POST">
+    <div class="form-container">
+
+      <input autofocus type="text" placeholder="Author Name" name="edited[author]" value="<%= @line_for_edit.author %>"><br/>
+      <input type="text" placeholder="<%= @entity_name.chop.capitalize%> Title." name="edited[title]" value="<%= @line_for_edit.title %>"><br/>
+      <input type="text" placeholder="Year" name="edited[year]"  value="<%= @line_for_edit.year %>"><br/>
+      <input type="text" placeholder="Tags" name="edited[tags]"  value="<%= @line_for_edit.tags %>"><br/>
+      <textarea placeholder="Comment" name="edited[comment]"><%= @line_for_edit.comment %></textarea>
+
+    </div>
+
+    <div class="checkbox-container">
+        <label class="checkbox">
+          <input class="" id="iveread" type="checkbox" name="edited[spent]" <%= @line_for_edit.spent_bul ? "checked" : nil %>/>
+          <em>
+            I've <%= @entity_name == "books" ? "read" : "saw" %> this <%= @entity_name.singularize %>
+          </em>
+        </label>
+    </div>
+
+    <button class="btn btn-lg center-block add">SAVE CHANGES</button>
+    <br><br>
+  </form> 
+</div>
+
+
+<div id="footer">
+  <a href="/<%= @line_for_edit.id %>/remove" style="text-decoration: none;" ><button class="btn btn-danger btn-sm center-block" style="margin-bottom: 2em;">DELETE THIS ITEM</button></a>
+</div>
+
+</body>
+</html>

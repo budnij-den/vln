@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit <%= @entity_name.singularize%></title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="shortcut icon" type="image/png" href="/img/edit.png"/>
+  <script src="/script/jquery-3.2.1.js"></script>
+  <script src="/script/script.js"></script>
+</head>
+<body>
+
+<div id="login">Log in</div>
+
+<div id="header" >
+  <div class="btn-group center-block">
+    <a href="/books"><button type="button" class="btn btn-default <%= @button_books_state %>">BOOKS</button></a>
+    <a href="/movies"><button type="button" class="btn btn-default <%= @button_movies_state %>">MOVIES</button></a>
+  </div> 
+</div>
+
+<div id="main-<%= @entity_name%>">
+  <form action="/edit_success/<%= @line_for_edit.id %>" method="POST">
+    <div class="form-container">
+
+      <input autofocus type="text" placeholder="Author Name" name="edited[author]" value="<%= @line_for_edit.author %>"><br/>
+      <input type="text" placeholder="<%= @entity_name.chop.capitalize%> Title." name="edited[title]" value="<%= @line_for_edit.title %>"><br/>
+      <input type="text" placeholder="Year" name="edited[year]"  value="<%= @line_for_edit.year %>"><br/>
+      <input type="text" placeholder="Tags" name="edited[tags]"  value="<%= @line_for_edit.tags %>"><br/>
+      <textarea placeholder="Comment" name="edited[comment]"><%= @line_for_edit.comment %></textarea>
+
+    </div>
+
+    <div class="checkbox-container">
+        <label class="checkbox">
+          <input class="" id="iveread" type="checkbox" name="edited[spent]" <%= @line_for_edit.spent_bul ? "checked" : nil %>/>
+          <em>
+            I've <%= @entity_name == "books" ? "read" : "saw" %> this <%= @character_selector.singularize %>
+          </em>
+        </label>
+    </div>
+
+    <button class="btn btn-lg center-block add">SAVE CHANGES</button>
+    <br><br>
+  </form> 
+</div>
+
+
+<div id="footer">
+        <a href="/<%= @line_for_edit.id %>/remove" style="text-decoration: none;" ><button class="btn btn-danger btn-sm center-block" style="margin-bottom: 2em;">DELETE THIS ITEM</button></a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<div id="footer" ng-app>
+  <div ng-init='items = <%= @lines_jsoned%>'></div>
+  <input type="text" placeholder=" Search " ng-model="search" style="color: black;">
+  <br/>
+
+  <div class="" style="font-size: 1.2em;">
+    <span class=""> Sort by: </span>
+    <span class="sortable"> Author </span>
+    /
+    <span class="sortable"> Title </span>
+    /
+    <span class="sortable"> Year </span>
+    /
+    <span class="sortable"> Date added </span>
+  </div>
+
+      <li style="list-style-type: none;">
+        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter : search">
+          <label class="checkbox">
+            <input type="checkbox" ng-model="item.spent_bul" disabled>
+            <em>
+              <a href="/list/{{item.id}}/edit" style="color: white; text-decoration: none;" >
+                {{item.author}} | {{item.title}} | {{item.year}}
+              </a>
+            </em>
+          </label>
+        </div>
+      </li>
+
+
+</div>
+
+<%= yield if block_given? %>

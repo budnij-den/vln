@@ -1,0 +1,20 @@
+<div class="" style="background-color: #F6CED8; font-size: 2em; text-align: center; height: 13.7em;">
+  <p>user info: name: <%= @user.name %>; password: <%= @user.password %></p>
+  <button id="userInfoChangeTrigger"class="btn btn-small btn-warning">change user info</button>
+  <a href="/logout" class="btn btn-small btn-warning" style="color: white;">immediately logout</a>
+  <br>
+  <div id="userInfoChange" style="display: none;">
+    <form action="/change" method="post" class="form-inline">
+      <input class="form-control" type="text" name="new_user_name" placeholder="new name">
+      <input class="form-control" type="password" name="new_password" placeholder="new password">
+      <button class="btn btn-small btn-warning" type="submit">submit changes</button>
+    </form>
+  </div>
+
+  <p><%= '='*40 %></p>
+
+  <p>items: <a href="/books">book(s): <%= @lines.where(character: 'book').count %>;</a> <a href="/movies">movie(s): <%= @lines.where(character: 'movie').count %></a></p>
+  <p>in total: <%= @lines.count%></p>
+</div>
+
+<%= yield if block_given? %>

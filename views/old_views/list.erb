@@ -1,0 +1,52 @@
+<div id="footer" ng-app>
+  <div ng-init='items = <%= @lines_jsoned%>'></div>
+  <input type="text" placeholder=" Search " ng-model="search" style="color: black;">
+  <br/>
+
+  <span style="font-size: 1.2em;">Sort by: Author / Title / Year / Date added</span>
+
+      <li style="list-style-type: none;">
+        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter : search">
+          <label class="checkbox"> 
+            <input type="checkbox" ng-model="item.spent_bul" disabled> 
+            <em>
+              <a href="/list/{{item.id}}/edit" style="color: white; text-decoration: none;" >
+                {{item.author}} | {{item.title}} | {{item.year}} 
+              </a>
+            </em>
+          </label>
+        </div>
+      </li>
+
+
+</div>
+
+
+<div id="footer">
+  <input type="text" placeholder=" Search " name="search" style="color: black;">
+  <br/>
+
+  <span style="font-size: 1.2em;">Sort by: Author / Title / Year / Date added</span>
+
+  <% if @lines %>
+  <% @lines.each do |line|%>
+    <% if line.character == @entity_name.chop %>
+      <li style="list-style-type: none;">
+        <div style="padding-top: 30px;" class="checkbox-container">
+          <label class="checkbox"> 
+            <input type="checkbox" disabled <%= line.spent_bul ? "checked" : nil %>> 
+            <em>
+              <a href="/list/<%= line.id %>/edit" style="color: white; text-decoration: none;" >
+                <%= line.author %> | <%= line.title %> | <%= line.year %>
+              </a>
+            </em>
+          </label>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+
+</div>
+
+<%= yield if block_given? %>

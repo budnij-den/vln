@@ -1,0 +1,24 @@
+<div id="" style="position: absolute; top: 3em; left: 0; right: 0; color: grey; font-size: 1.4em; text-align: center; ">
+
+      <button id="signIn" class="btn btn-success btn-lg" style="width: 8em;">sign in</button>
+      <button id="signUp" class="btn btn-primary btn-lg" style="width: 8em;"> sign up</button>
+</div>
+
+<div id="Registering" style="display: none;">
+  <form action="/login" method="post" class="form-inline" style="position: absolute; top: 8em; left: 0; right: 0; text-align: center;">
+    <div class="form-group">
+      <input type="text" class="form-control" name="name" placeholder="Place name here" autofocus>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" name="password" placeholder="Place secret here">
+    </div>
+    <button type="submit" class="btn btn-warning btn-lg">register</button>
+  </form>
+</div>
+
+
+
+<div id="footer">
+</div>
+
+<%= yield if block_given?%>
