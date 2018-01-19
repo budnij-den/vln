@@ -88,16 +88,7 @@ class Vidi_app < Sinatra::Base
     end
 
     session['validate_error'] = @line.errors.full_messages
-    # @validate_error = @line.valid?
-    # if @validate_error
-    #   # redirect "/#{@entity_name.pluralize}"
-    #   p "#{@line.valid?},#{@entity_name}, #{@validate_error}, #{@line.errors.messages}"
-        redirect "#{@entity_name.pluralize}"
-    # else
-      # erb :header do
-      #   erb :items
-      #  end
-    # end
+    redirect "#{@entity_name.pluralize}"
   end
 
   #заглушка на случай тыков в адресную строку
@@ -127,9 +118,9 @@ class Vidi_app < Sinatra::Base
   get '/:id/remove' do
     id = params[:id]
     @line_for_remove = @lines.find(id)
-    entity_name = @line_for_remove.character.pluralize #иначе к моменту редиректа инф-я о сущности будет уничтожена вместе с объектом
+    entity_name = @line_for_remove.character #иначе к моменту редиректа инф-я о сущности будет уничтожена вместе с объектом
     @line_for_remove.destroy
-    redirect to "/#{entity_name}"
+    redirect to "/#{entity_name.pluralize}"
    end
 
    get '/overlook' do
@@ -149,12 +140,9 @@ class Vidi_app < Sinatra::Base
     @user.update(name: params['new_user_name'], password: params['new_password'])
     if session['user_name'] != @user.name
       session['user_name'] = @user.name
+      @lines.update(creator: @user.name)
     end
-     erb :header do
-      erb :overlook do
-#        erb :list
-      end
-    end
+    redirect '/change'
   end
 
     #заглушка на случай тыков в адресную строку
