@@ -111,6 +111,11 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 .add:hover{
   color: #c3d5d7;
 }
+.inactive{
+  background-color: #243540;
+  color: white;
+  border: 2px solid red;
+}
 label{
   font-size: 1.1em;
   font-weight: normal;

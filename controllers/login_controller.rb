@@ -35,9 +35,12 @@ class LoginScreen < Sinatra::Base
         end
       end
     else
-      erb :layout do
-        "<h2 style=\"color:grey;\">wrong or blank enter</h2><br><a href=\"/login\">back</a>"
-      end
+      @user = User.create(name: params['name'], password: params['password'])
+      session['user_name'] = @user.name
+      redirect '/welcome'
+      # erb :layout do
+      #   "<h2 style=\"color:grey;\">wrong or blank enter</h2><br><a href=\"/login\">back</a>"
+      # end
     end
   end
 

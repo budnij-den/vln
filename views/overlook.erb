@@ -3,12 +3,17 @@
   <button id="userInfoChangeTrigger"class="btn btn-small btn-warning">change user info</button>
   <a href="/logout" class="btn btn-small btn-warning" style="color: white;">immediately logout</a>
   <br>
-  <div id="userInfoChange" style="display: none;">
+  <div id="userInfoChange" style="<%= session['validate_error'] ? '' : "display: none;" %>">
     <form action="/change" method="post" class="form-inline">
       <input class="form-control" type="text" name="new_user_name" placeholder="new name">
       <input class="form-control" type="password" name="new_password" placeholder="new password">
       <button class="btn btn-small btn-warning" type="submit">submit changes</button>
     </form>
+      <% if session['validate_error']%>
+        <% session['validate_error'].each do |error| %>
+        <p class="btn-danger badge"><%= error%></p>
+        <% end -%>
+      <% end -%>
   </div>
 
   <p><%= '='*40 %></p>
@@ -18,3 +23,5 @@
 </div>
 
 <%= yield if block_given? %>
+
+<% session.delete('validate_error') %>

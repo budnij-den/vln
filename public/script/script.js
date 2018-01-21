@@ -20,10 +20,12 @@ var hereIsEntity = function () {
 window.onload = function(){
   if (hereIsEntity() == 'movies'){
     $('#favicon').attr("href","/img/2-clapper.png");
-    $('#showMovies').show();
+    $('#showMovies').show('fast');
+    $('#booksButton').addClass('inactive');
   } else if (hereIsEntity() == 'books'){
     $('#favicon').attr("href","/img/2-book.png");
-    $('#showBooks').show();
+    $('#showBooks').show('fast');
+    $('#moviesButton').addClass('inactive');
   } else {
     $('#favicon').attr("href","/img/user.png");
   }

@@ -19,7 +19,7 @@ class Vidi_app < Sinatra::Base
   use LoginScreen
 
   def line_invalid?
-    !!session['validate_error'] && session['validate_error'][0].size > 0
+    !!session['validate_error'] && session['validate_error'].any?
   end
 
   before do
@@ -138,9 +138,11 @@ class Vidi_app < Sinatra::Base
 
   post '/change' do
     @user.update(name: params['new_user_name'], password: params['new_password'])
-    if session['user_name'] != @user.name
+    if @user.errors.empty? && session['user_name'] != @user.name
       session['user_name'] = @user.name
       @lines.update(creator: @user.name)
+    else
+      session['validate_error'] = @user.errors.full_messages
     end
     redirect '/change'
   end
