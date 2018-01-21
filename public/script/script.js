@@ -20,11 +20,11 @@ var hereIsEntity = function () {
 window.onload = function(){
   if (hereIsEntity() == 'movies'){
     $('#favicon').attr("href","/img/2-clapper.png");
-    $('#showMovies').show('fast');
+    $('#showMovies').slideDown(1000);
     $('#booksButton').addClass('inactive');
   } else if (hereIsEntity() == 'books'){
     $('#favicon').attr("href","/img/2-book.png");
-    $('#showBooks').show('fast');
+    $('#showBooks').slideDown(1000);
     $('#moviesButton').addClass('inactive');
   } else {
     $('#favicon').attr("href","/img/user.png");

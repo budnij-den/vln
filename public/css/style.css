@@ -51,6 +51,19 @@ a:link, a:visited, a:active, a:hover{
   font-size: 1.3em;
   width: 140px;
 }
+.inactive{
+  /*all:unset;*/
+  background-color: #243540;
+  background-image: none;
+  color: white;
+  border: 1px solid;
+  text-shadow:none;
+  /*font-size: 90%;*/
+}
+.inactive:hover{
+  background-color: #243540;
+  color: #c3d5d7;
+}
 
 .main{
   background-size: 150px auto;
@@ -110,11 +123,6 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 }
 .add:hover{
   color: #c3d5d7;
-}
-.inactive{
-  background-color: #243540;
-  color: white;
-  border: 2px solid red;
 }
 label{
   font-size: 1.1em;
