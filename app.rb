@@ -1,4 +1,4 @@
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require_relative './controllers/application_controller'
 
 

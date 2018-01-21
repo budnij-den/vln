@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
 gem 'rack'
 gem 'rake'
+gem 'sinatra', '~> 2.0'
 gem 'sinatra-activerecord'
-gem 'sinatra-base'
+#gem 'sinatra-base'
 
 group :development do
-  gem 'sinatra-reloader'
+#  gem 'sinatra-reloader'
   gem 'sqlite3'
 end
 

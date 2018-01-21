@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require "sinatra/activerecord"
-require 'sinatra/reloader'
+#require 'sinatra/reloader'
 require_relative './login_controller'
 require_relative '../models/model_Line'
 require_relative '../models/model_User'
