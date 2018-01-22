@@ -93,8 +93,8 @@ a:link, a:visited, a:active, a:hover{
   border-radius: 3px;
   border: 1px solid #FFFFFF;
   border: none;
-  margin-bottom: 20px;
-  margin: auto;
+  margin: auto;/*keep order*/
+    margin-bottom: 20px;
   outline: none;
   padding: 0.5em 1em;
   width: 100%;
