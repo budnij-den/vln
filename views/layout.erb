@@ -14,10 +14,10 @@
 </head>
 <body>
 
-<% if @user%>
+<% if session['user_name']%>
   <div id="login">
     <a href="/overlook" class="inactive-anchor">
-      <%= "#{@user.name}"%>
+      <%= "#{session['user_name']}"%>
     </a>
   </div>
 <% end %>
