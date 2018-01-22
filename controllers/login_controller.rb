@@ -27,7 +27,6 @@ class LoginScreen < Sinatra::Base
   post('/login') do
     @user = @users.find_by name: "#{params['name']}"                            #проверка наличия имени в бд
     if @user                                                                    #имя есть, идём в проверку соответствия с паролем
-      #if @user.name == params['name'] && @user.password == params['password']
       if @user.password == params['password']                                   #пароль соответствует, пишем имя в сессию
         session['user_name'] = @user.name
         redirect '/welcome'
@@ -52,29 +51,3 @@ class LoginScreen < Sinatra::Base
   end
 
 end
-
-# class MyApp < Sinatra::Base
-#   set :views, "./views"
-#   # middleware will run before filters
-#   use LoginScreen
-
-#   before do
-#     unless session['user_name']
-#       halt erb :layout do
-#         "<h2 style=\"color:grey;\">Access denied, please <a href='/'>login</a>.</h2>"
-#       end
-#     end
-#   end
-
-#   not_found do
-#     redirect '/greeting'
-#   end
-
-#   get('/greeting') do
-#     erb :layout do
-#       "<h2 style=\"color:grey;\">Hello #{session['user_name']}.</h2> <br><blockquote class=\"blockquote\"> #{session.inspect}</blockquote>"
-#     end
-#   end
-# end
-
-
