@@ -15,9 +15,9 @@ html body{
   width: 800px;
 }
 #login{
-  border: thin dotted Grey;
+  border: thin dotted #808080;
   border-radius: 0.5em;
-  color: white;
+  color: #FFFFFF;
   font-size: 1.2em;
   height: 1.6em;
   position: absolute;
@@ -27,11 +27,11 @@ html body{
   text-align: center;
 }
 #login:hover{
-  background-color: lightgrey;
-  color: grey;
+  background-color: #D3D3D3;
+  color: #808080;
 }
 a:link, a:visited, a:active, a:hover{
-  color:grey;
+  color:#808080;
   text-decoration: none;
 }
 .btn{
@@ -55,10 +55,9 @@ a:link, a:visited, a:active, a:hover{
   /*all:unset;*/
   background-color: #243540;
   background-image: none;
-  color: white;
+  color: #FFFFFF;
   border: 1px solid;
   text-shadow:none;
-  /*font-size: 90%;*/
 }
 .inactive:hover{
   background-color: #243540;
@@ -86,7 +85,7 @@ a:link, a:visited, a:active, a:hover{
 }
 .form-container input, .form-container textarea, #footer>input{
   border: none;
-  border: 1px solid white;
+  border: 1px solid #FFFFFF;
   border-radius: 3px;
   margin: auto;
   margin-bottom: 20px;
@@ -100,11 +99,11 @@ a:link, a:visited, a:active, a:hover{
 }
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   font-style: italic;
-  color: lightGrey;
+  color: #D3D3D3;
 }
 input:-moz-placeholder, textarea:-moz-placeholder {
   font-style: italic;
-  color: lightGrey;
+  color: #D3D3D3;
 }
 .checkbox{
   padding-left: 25px;
@@ -118,7 +117,7 @@ input:-moz-placeholder, textarea:-moz-placeholder {
 }
 .add{
   background-color: #243540;
-  color: white;
+  color: #FFFFFF;
   width: 170px;
 }
 .add:hover{
@@ -130,13 +129,13 @@ label{
 }
 
 .sortable:hover{
-  border-bottom: 1px dashed white;
+  border-bottom: 1px dashed #FFFFFF;
   cursor: pointer;
 }
 
 #footer{
   background-color: #243540;
-  color: white;
+  color: #FFFFFF;
   margin: auto;
   padding-top: 30px;
   width: 800px;
