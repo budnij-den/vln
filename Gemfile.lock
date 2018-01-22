@@ -71,7 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   heroku
-  pg
+  pg (~> 0.18)
   rack
   rake
   sinatra (~> 2.0)
