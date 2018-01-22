@@ -8,6 +8,8 @@ var hereIsEntity = function () {
           entity = urlParsed[x];
       } else if (urlParsed[x] === 'movies'){
           entity = urlParsed[x];
+      } else if (urlParsed[x] === 'edit'){
+          entity = urlParsed[x];
       } else {
         entity = 'user'
       }
@@ -26,6 +28,8 @@ window.onload = function(){
     $('#favicon').attr("href","/img/2-book.png");
     $('#showBooks').slideDown(1000);
     $('#moviesButton').addClass('inactive');
+  } else if (hereIsEntity() == 'edit'){
+    $('#favicon').attr("href","/img/edit.png");
   } else {
     $('#favicon').attr("href","/img/user.png");
   }
