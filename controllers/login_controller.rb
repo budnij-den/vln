@@ -19,28 +19,31 @@ class LoginScreen < Sinatra::Base
     if session['user_name']
       redirect '/welcome'
     else
+      session.delete('validate_error')
       erb :login
     end
   end
 
   post('/login') do
-    @user = @users.find_by name: "#{params['name']}"
-    if @user
-      if @user.name == params['name'] && @user.password == params['password']
+    @user = @users.find_by name: "#{params['name']}"                            #проверка наличия имени в бд
+    if @user                                                                    #имя есть, идём в проверку соответствия с паролем
+      #if @user.name == params['name'] && @user.password == params['password']
+      if @user.password == params['password']                                   #пароль соответствует, пишем имя в сессию
         session['user_name'] = @user.name
         redirect '/welcome'
-      else
-        erb :layout do
-          "<h2 style=\"color:grey;\">wrong or blank enter</h2><br><a href=\"/login\">back</a>"
-        end
+      else                                                                      #пароль не соответствует, предупреждение и ссылка назад
+        session['validate_error'] = ['wrong password']
+        erb :login
       end
-    else
-      @user = User.create(name: params['name'], password: params['password'])
-      session['user_name'] = @user.name
-      redirect '/welcome'
-      # erb :layout do
-      #   "<h2 style=\"color:grey;\">wrong or blank enter</h2><br><a href=\"/login\">back</a>"
-      # end
+    else                                                                        #юзер не найден в бд по имени, тогда
+      @user = User.create(name: params['name'], password: params['password'])   #запускаем создание нового юзера
+      if @user.errors.full_messages.any?                                        #отображаем проваленную валидацию
+        session['validate_error'] = @user.errors.full_messages
+        erb :login
+      else
+        session['user_name'] = @user.name
+        redirect '/welcome'
+      end
     end
   end
 

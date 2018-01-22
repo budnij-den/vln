@@ -5,7 +5,7 @@
   <button id="signUp" class="btn btn-primary btn-lg" style="margin-top: 1em; width: 8em;"> sign up</button>
 </div>
 
-<div id="Registering" style="margin-top: 2em; display: none;">
+<div id="Registering" style="margin-top: 2em; display:<%=session['validate_error'] ? nil : 'none' %>;">
   <form action="/login" method="post" class="form-inline" style="left: 0; right: 0; text-align: center;">
     <div class="form-group">
       <input type="text" class="form-control" name="name" placeholder="Place name here" autofocus>
@@ -14,6 +14,13 @@
       <input type="password" class="form-control" name="password" placeholder="Place secret here">
     </div>
     <button type="submit" class="btn btn-info">register</button>
+    <br>
+    <br>
+  <% if session['validate_error']%>
+    <% session['validate_error'].each do |error| %>
+    <p class="btn-danger badge"><%= error%></p>
+    <% end %>
+  <% end %>
   </form>
 </div>
 
@@ -23,3 +30,5 @@
 </div>
 
 <%= yield if block_given?%>
+
+<% session.delete('validate_error') %>
