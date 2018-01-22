@@ -4,7 +4,7 @@
       <% if line_invalid? %>
         <p style="position: absolute; top: 11em; color: darkred; font-weight: 600;"> this field can't be blank </p>
       <% end %>
-      <input autofocus type="text" placeholder="Director Name. Movie Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid salmon;"' : nil %>><br/>
+      <input autofocus type="text" placeholder="Director Name. Movie Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid #FA8072;"' : nil %>><br/>
       <input type="text" placeholder="Tags" name="tags"><br/>
       <textarea form="" placeholder="Comment" name="comment"></textarea>
       <input type="hidden" name="entity_name" value="movie">
@@ -27,7 +27,7 @@
       <% if line_invalid? %>
         <p style="position: absolute; top: 11em; color: darkred; font-weight: 600;"> this field can't be blank </p>
       <% end %>
-      <input autofocus type="text" placeholder="Author Name. Book Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid salmon;"' : nil %>><br/>
+      <input autofocus type="text" placeholder="Author Name. Book Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid #FA8072;"' : nil %>><br/>
       <input type="text" placeholder="Tags" name="tags"><br/>
       <textarea form="" placeholder="Comment" name="comment"></textarea>
       <input type="hidden" name="entity_name" value="book">
