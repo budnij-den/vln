@@ -65,9 +65,9 @@ a:link, a:visited, a:active, a:hover{
 }
 
 .main{
-  background-size: 150px auto;
-  background-repeat: no-repeat;
   background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 150px auto;
   color: #243540;
 }
 .main-books{
@@ -78,17 +78,23 @@ a:link, a:visited, a:active, a:hover{
   background-color: #4ab7a0;
   background-image: url(../img/2017-11-16_19-18-40.412.jpg);
 }
+.overlook{
+  background-color: #F6CED8;
+  font-size: 2em;
+  height: 13.7em;
+  text-align: center;
+}
 .form-container{
+  margin: auto;
   padding-top: 30px;
   width: 800px;
-  margin: auto;
 }
 .form-container input, .form-container textarea, #footer>input{
-  border: none;
-  border: 1px solid #FFFFFF;
   border-radius: 3px;
-  margin: auto;
+  border: 1px solid #FFFFFF;
+  border: none;
   margin-bottom: 20px;
+  margin: auto;
   outline: none;
   padding: 0.5em 1em;
   width: 100%;
