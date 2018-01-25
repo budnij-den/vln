@@ -1,25 +1,25 @@
-<div id="showMovies" class="main main-movies" style="display: none;">
-  <form action="/adding" method="post">
-    <div class="form-container">
-      <% if line_invalid? %>
-        <p style="position: absolute; top: 11em; color: darkred; font-weight: 600;"> this field can't be blank </p>
-      <% end %>
-      <input autofocus type="text" placeholder="Director Name. Movie Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid #FA8072;"' : nil %>><br/>
-      <input type="text" placeholder="Tags" name="tags"><br/>
-      <textarea form="" placeholder="Comment" name="comment"></textarea>
-      <input type="hidden" name="entity_name" value="movie">
-    </div>
+  <div id="showMovies" class="main main-movies" style="display: none;">
+    <form action="/adding" method="post">
+      <div class="form-container">
+        <% if line_invalid? %>
+          <p style="position: absolute; top: 11em; color: darkred; font-weight: 600;"> this field can't be blank </p>
+        <% end %>
+        <input autofocus type="text" placeholder="Director Name. Movie Title. Year" name="whole_name" <%= line_invalid? ? 'style="border: 1px solid #FA8072;"' : nil %>><br/>
+        <input type="text" placeholder="Tags" name="tags"><br/>
+        <textarea form="" placeholder="Comment" name="comment"></textarea>
+        <input type="hidden" name="entity_name" value="movie">
+      </div>
 
-    <div class="checkbox-container">
-        <label class="checkbox">
-          <input class="" id="iveread" type="checkbox"/><em>I've seen this movie</em>
-        </label>
-    </div>
+      <div class="checkbox-container">
+          <label class="checkbox">
+            <input class="" id="iveread" type="checkbox" name="spent"/><em>I've seen this movie</em>
+          </label>
+      </div>
 
-    <button class="btn btn-lg center-block add">ADD MOVIE</button>
-  </form>
-  <br><br>
-</div>
+      <button class="btn btn-lg center-block add">ADD MOVIE</button>
+    </form>
+    <br><br>
+  </div>
 
 <div id="showBooks" class="main main-books" style="display: none;">
   <form action="/adding" method="post">
@@ -35,7 +35,7 @@
 
     <div class="checkbox-container">
         <label class="checkbox">
-          <input class="" id="iveread" type="checkbox"/><em>I've read this book</em>
+          <input class="" id="iveread" type="checkbox" name="spent"/><em>I've read this book</em>
         </label>
     </div>
 
