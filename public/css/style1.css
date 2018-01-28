@@ -138,6 +138,12 @@ label{
   border-bottom: 1px dashed #FFFFFF;
   cursor: pointer;
 }
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
 
 #footer{
   background-color: #243540;

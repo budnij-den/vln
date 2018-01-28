@@ -1,24 +1,28 @@
-<div id="footer" ng-app>
+<div id="footer" ng-app='listOrderApplication' ng-controller="listOrderController">
   <div ng-init='items = <%= @lines_jsoned%>'></div>
   <input type="text" placeholder=" Search " ng-model="search" style="color: black;">
   <br/>
 
-<!-- hide for future angular sort -->
-<!--
+<!-- angular sort -->
+
   <div class="" style="font-size: 1.2em;">
     <span class=""> Sort by: </span>
-    <span class="sortable"> Author </span>
+    <span class="sortable" ng-click = "sortBy('author')"> Author </span>
+    <span class="sortorder" ng-show="propertyName === 'author'" ng-class="{reverse: reverse}"></span>
     /
-    <span class="sortable"> Title </span>
+    <span class="sortable" ng-click = "sortBy('title')"> Title </span>
+    <span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span>
     /
-    <span class="sortable"> Year </span>
+    <span class="sortable" ng-click = "sortBy('year')"> Year </span>
+    <span class="sortorder" ng-show="propertyName === 'year'" ng-class="{reverse: reverse}"></span>
     /
-    <span class="sortable"> Date added </span>
+    <span class="sortable" ng-click = "sortBy('created_at')"> Date added </span>
+    <span class="sortorder" ng-show="propertyName === 'created_at'" ng-class="{reverse: reverse}"></span>
   </div>
--->
+
 
       <li style="list-style-type: none;">
-        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter : search">
+        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter:search | orderBy:propertyName:reverse">
           <label class="checkbox">
             <input type="checkbox" ng-model="item.spent_bul" disabled>
             <em>

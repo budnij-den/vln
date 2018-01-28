@@ -52,5 +52,20 @@ $(document).ready(function(){
 })
 //конец(форма при смене имени+пароля)
 
-
 //alert("test message");
+
+//angular definitions
+angular.module('listOrderApplication',[])
+.controller('listOrderController',['$scope', function($scope){
+  let items = [];
+  $scope.propertyName='created_at';
+  $scope.reverse=true;
+  $scope.items=items;
+
+  $scope.sortBy = function(propertyName){
+    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+    $scope.propertyName = propertyName;
+  };
+}]);
+
+//end of angular definitions
