@@ -139,10 +139,13 @@ label{
   cursor: pointer;
 }
 .sortorder:after {
-  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+  content: '\25b2';   // UP-POINTING TRIANGLE
 }
 .sortorder.reverse:after {
-  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+  content: '\25bc';   // DOWN-POINTING TRIANGLE
+}
+.vieworder:after{
+  content: '\2022';
 }
 
 #footer{

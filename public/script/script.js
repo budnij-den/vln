@@ -67,5 +67,8 @@ angular.module('listOrderApplication',[])
     $scope.propertyName = propertyName;
   };
 }]);
+angular.module('listOrderApplication').filter('hideSpented', function(){
+  return $scope.items.spent_bul
+});
 
 //end of angular definitions

@@ -20,9 +20,17 @@
     <span class="sortorder" ng-show="propertyName === 'created_at'" ng-class="{reverse: reverse}"></span>
   </div>
 
+  <div class="" style="font-size: 1.2em;">
+     View:
+     <span class="sortable" ng-click="hideSpented">Hide movies I have seen </span>
+     <span class="vieworder"></span>
+    /
+     <span class="sortable" ng-click = "ng-show">View all</span>
+  </div>
+
 
       <li style="list-style-type: none;">
-        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter:search | orderBy:propertyName:reverse">
+        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter:search | filter:hideSpented | orderBy:propertyName:reverse">
           <label class="checkbox">
             <input type="checkbox" ng-model="item.spent_bul" disabled>
             <em>
@@ -36,5 +44,6 @@
 
 
 </div>
+
 
 <%= yield if block_given? %>
