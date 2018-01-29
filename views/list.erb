@@ -28,7 +28,7 @@
   </div>
 
       <li style="list-style-type: none;">
-        <div style="padding-top: 30px;" class="checkbox-container {{ 'hideSpentedIs-' + item.spent_bul }}" ng-repeat="item in items | filter:search | filter:checked | orderBy:propertyName:reverse">
+        <div style="padding-top: 30px;" class="checkbox-container {{ 'hideSpentedIs-' + item.spent_bul }}" ng-repeat="item in items | filter:search | orderBy:propertyName:reverse">
           <label class="checkbox">
             <input type="checkbox" ng-model="item.spent_bul" disabled>
             <em>
