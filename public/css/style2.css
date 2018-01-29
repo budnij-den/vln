@@ -134,19 +134,21 @@ label{
   font-weight: normal;
 }
 
-.sortable:hover{
+.sortable:hover,
+.sortable.selected{
   border-bottom: 1px dashed #FFFFFF;
   cursor: pointer;
 }
+
 .sortorder:after {
   content: '\25b2';   // UP-POINTING TRIANGLE
 }
 .sortorder.reverse:after {
   content: '\25bc';   // DOWN-POINTING TRIANGLE
 }
-.vieworder:after{
+/*.vieworder:after{
   content: '\2022';
-}
+}*/
 
 #footer{
   background-color: #243540;

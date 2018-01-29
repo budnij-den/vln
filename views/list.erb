@@ -22,15 +22,13 @@
 
   <div class="" style="font-size: 1.2em;">
      View:
-     <span class="sortable" ng-click = 'checked'>Hide movies I have seen </span>
-     <span class="vieworder"></span>
+     <span id="hideSpented" class="sortable" onclick = "hideSpented();">Hide movies I have seen </span>
     /
-     <span class="sortable" ng-click = "ng-show">View all</span>
+     <span id="showSpented" class="sortable" onclick="showSpented();">View all</span>
   </div>
-  <input type="checkbox" name="" checked>
 
       <li style="list-style-type: none;">
-        <div style="padding-top: 30px;" class="checkbox-container" ng-repeat="item in items | filter:search | filter:checked | orderBy:propertyName:reverse">
+        <div style="padding-top: 30px;" class="checkbox-container {{ 'hideSpentedIs-' + item.spent_bul }}" ng-repeat="item in items | filter:search | filter:checked | orderBy:propertyName:reverse">
           <label class="checkbox">
             <input type="checkbox" ng-model="item.spent_bul" disabled>
             <em>
