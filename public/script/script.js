@@ -58,17 +58,27 @@ $(document).ready(function(){
 angular.module('listOrderApplication',[])
 .controller('listOrderController',['$scope', function($scope){
   let items = [];
+  let itemsNot = [];
+  let itemsNotSpented = function(items){
+    for (var i = items.length - 1; i >= 0; i--) {
+      items[i].spent_bul ? itemsNot.push.items[i] : false;
+    }
+  };
   $scope.propertyName='created_at';
   $scope.reverse=true;
   $scope.items=items;
+  // $scope.customAlert = function(){
+  //   alert('hello');
+  //   items
+  // };
 
   $scope.sortBy = function(propertyName){
     $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
     $scope.propertyName = propertyName;
   };
 }]);
-angular.module('listOrderApplication').filter('hideSpented', function(){
-  return $scope.items.spent_bul
+angular.module('listOrderApplication').filter('hideSpented', function(item){
+  return $scope.items.item.spent_bul
 });
 
 //end of angular definitions
