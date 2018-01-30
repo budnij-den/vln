@@ -6,25 +6,41 @@
 <!-- angular sort -->
 
   <div class="" style="font-size: 1.2em;">
-    <span class=""> Sort by: </span>
-    <span class="sortable" ng-click = "sortBy('author')"> Author </span>
-    <span class="sortorder" ng-show="propertyName === 'author'" ng-class="{reverse: reverse}"></span>
-    /
-    <span class="sortable" ng-click = "sortBy('title')"> Title </span>
-    <span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span>
-    /
-    <span class="sortable" ng-click = "sortBy('year')"> Year </span>
-    <span class="sortorder" ng-show="propertyName === 'year'" ng-class="{reverse: reverse}"></span>
-    /
-    <span class="sortable" ng-click = "sortBy('created_at')"> Date added </span>
-    <span class="sortorder" ng-show="propertyName === 'created_at'" ng-class="{reverse: reverse}"></span>
+    <div class="row">
+      <div class="col-xs-2">
+        <span class=""> Sort by: </span>
+      </div>
+      <div class="col-xs-2">
+        <span class="sortable" ng-click = "sortBy('author')"> Author </span>
+        <span class="sortorder" ng-show="propertyName === 'author'" ng-class="{reverse: reverse}"></span>
+      </div>
+      <div class="col-xs-2">
+        <span class="sortable" ng-click = "sortBy('title')"> Title </span>
+        <span class="sortorder" ng-show="propertyName === 'title'" ng-class="{reverse: reverse}"></span>
+      </div>
+      <div class="col-xs-2">
+        <span class="sortable" ng-click = "sortBy('year')"> Year </span>
+        <span class="sortorder" ng-show="propertyName === 'year'" ng-class="{reverse: reverse}"></span>
+      </div>
+      <div class="col-xs-2">
+        <span class="sortable" ng-click = "sortBy('created_at')"> Date added </span>
+        <span class="sortorder" ng-show="propertyName === 'created_at'" ng-class="{reverse: reverse}"></span>
+      </div>
+    </div>
   </div>
 
-  <div class="" style="font-size: 1.2em;">
-     View:
-     <span id="hideSpented" class="sortable" onclick = "hideSpented();">Hide movies I have seen </span>
-    /
-     <span id="showSpented" class="sortable" onclick="showSpented();">View all</span>
+  <div class="" style="font-size: 1.2em;padding-top: 1em;">
+    <div class="row">
+      <div class="col-xs-2">
+        <span>View:</span>
+      </div>
+      <div class="col-xs-4">
+        <span id="hideSpented" class="sortable" onclick = "hideSpented();">Hide <%= @entity_name %> I have <%= @entity_name=='books' ? 'read' : 'seen'%> </span>
+      </div>
+      <div class="col-xs-2">
+        <span id="showSpented" class="sortable" onclick="showSpented();">View all</span>
+      </div>
+    </div>
   </div>
 
       <li style="list-style-type: none;">
