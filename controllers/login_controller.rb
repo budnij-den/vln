@@ -5,11 +5,6 @@ class LoginScreen < Sinatra::Base
   set :views, "./views"
   set :public_folder, "./public"
 
-#  enable :sessions
-
-  #set :sessions, :expire_after => 2592000   #trying securing sessions
-  #set :session_store, Rack::Session::Pool   
-
   use Rack::Session::Pool, :expire_after => 2592000
   use Rack::Protection::RemoteToken
   use Rack::Protection::SessionHijacking

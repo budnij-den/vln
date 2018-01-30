@@ -12,9 +12,6 @@ class Vidi_app < Sinatra::Base
   set :database_file, "../config/database.yml" #всё, что касается сервера, требует '../'' в начале адреса
   set :public_folder, "./public"               #а все, что касается view, требует './' . И это совершенно непонятная хурма
   set :views, "./views"
-  # enable :static
-  # use Rack::Session::Pool                      #TODO разобраца что за зверь, пример http://www.getlaura.com/how-to-enable-sessions-with-sinatra/
-  # enable :sessions
 
   use LoginScreen
 
