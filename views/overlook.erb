@@ -5,7 +5,7 @@
   <br>
   <div id="userInfoChange" style="<%= session['validate_error'] ? '' : "display: none;" %>">
     <form action="/change" method="post" class="form-inline">
-      <input class="form-control" type="text" name="new_user_name" placeholder="new name">
+      <input class="form-control" type="text" name="new_user_name" placeholder="new name" value="<%= @user.name%>">
       <input class="form-control" type="password" name="new_password" placeholder="new password">
       <button class="btn btn-small btn-warning" type="submit">submit changes</button>
     </form>
