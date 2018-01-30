@@ -121,6 +121,12 @@ input:-moz-placeholder, textarea:-moz-placeholder {
   margin: auto;
   width: 800px;
 }
+.items-list{
+  padding-top: 0;
+}
+/*.items-list:first-child{
+  padding-top: 1em;
+}*/
 .add{
   background-color: #243540;
   color: #FFFFFF;

@@ -3,7 +3,7 @@
   <input type="text" placeholder=" Search " ng-model="search" style="color: black;">
   <br/>
 
-<!-- angular sort -->
+<!-- angular sort condition -->
 
   <div class="" style="font-size: 1.2em;">
     <div class="row">
@@ -29,7 +29,7 @@
     </div>
   </div>
 
-  <div class="" style="font-size: 1.2em;padding-top: 1em;">
+  <div class="" style="font-size: 1.2em;padding-top: 1em;padding-bottom: 1em;">
     <div class="row">
       <div class="col-xs-2">
         <span>View:</span>
@@ -43,8 +43,10 @@
     </div>
   </div>
 
+<!-- angular (ng-repeat) list -->
+
       <li style="list-style-type: none;">
-        <div style="padding-top: 30px;" class="checkbox-container {{ 'hideSpentedIs-' + item.spent_bul }}" ng-repeat="item in items | filter:search | orderBy:propertyName:reverse">
+        <div style="" class="checkbox-container items-list {{ 'hideSpentedIs-' + item.spent_bul }}" ng-repeat="item in items | filter:search | orderBy:propertyName:reverse">
           <label class="checkbox">
             <input type="checkbox" ng-model="item.spent_bul" disabled>
             <em>
