@@ -162,4 +162,5 @@ label{
   margin: auto;
   padding-top: 30px;
   width: 800px;
+  min-height: 50vh;
 }
