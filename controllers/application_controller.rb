@@ -65,12 +65,12 @@ class Vidi_app < Sinatra::Base
   post '/adding' do
     @entity_name = params[:entity_name]
 
-    whole_name = params[:whole_name].gsub(/'/) { |match| "\'" }.split ('.')    #парсим смысловые блоки по точкам
+    whole_name = params[:whole_name].gsub(/'|"/) { |match| "`" }.split ('.')    #парсим смысловые блоки по точкам
     author = whole_name[0]                          #на этом поле валидация (только), предусмотреть div/popup/alert с предупреждением
     title = whole_name[1]
     year = whole_name[2]
-    comment = params[:comment]
-    tags = params[:tags]
+    comment = params[:comment].gsub(/'|"/) { |match| "`" }
+    tags = params[:tags].gsub(/'|"/) { |match| "`" }
     spent_bul = !params[:spent].nil?                #вычисляем булин просмотренности
 
     @line = Line.create do |l|                         #это быстрее, чем подменять пары в params
